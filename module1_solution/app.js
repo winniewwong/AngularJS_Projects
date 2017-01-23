@@ -8,6 +8,7 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   $scope.dishes = "";
   $scope.message = "";
+  $scope.color = "green";
 
   $scope.CheckIfTooMuch = function () {
     // looks for 0 or more spaces followed by a comma followed by 0
@@ -28,13 +29,16 @@ function LunchCheckController($scope) {
     console.log(count);
 
     if ( $scope.dishes == "" || count == 0 ) {
-        $scope.message = "Please enter data first";
+      $scope.message = "Please enter data first";
+      $scope.color = "red";
     }
     else if ( count <= 3 ){
       $scope.message = "Enjoy!";
+        $scope.color = "green";
     }
     else if ( count > 3 ){
       $scope.message = "Too much!";
+      $scope.color = "red";
     }
 
 
