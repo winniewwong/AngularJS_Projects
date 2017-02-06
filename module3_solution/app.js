@@ -92,7 +92,9 @@ function MenuSearchService($http, ApiBasePath) {
       // Search through the description to find the match
       // process result and only keep items that match
       for (var item in response.data.menu_items){
-         if (response.data.menu_items[item].description.includes(searchTerm)){
+        var description = response.data.menu_items[item].description.toLowerCase();
+        searchTerm = searchTerm.toLowerCase();
+        if (description.indexOf(searchTerm) !== -1) {
            foundItems.push(response.data.menu_items[item])
          }
       }
