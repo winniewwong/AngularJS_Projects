@@ -49,11 +49,12 @@ function NarrowItDownController(MenuSearchService){
   menu.click = false;
 
   menu.getCorrectItems = function () {
-     menu.click = true;
+
      var promise = MenuSearchService.getMatchedMenuItems(menu.itemName);
 
       promise.then(function (response) {
         menu.foundList = response;
+        menu.click = true;
         console.log(menu.foundList);
       })
       .catch(function (error) {
