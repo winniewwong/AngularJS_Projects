@@ -31,14 +31,8 @@ function FoundItemsDirectiveController() {
   // you should simply display the message "Nothing found".
   // note that Initial page will not display "Nothing found"
   menu.nothingFound = function () {
-
-  if ( menu.foundList.length == 0 && menu.click == "true"){
-      return true;
-    }
-    else{
-      return false;
-    }
-  };
+    return ( menu.foundList.length == 0 && menu.click == "true");
+  }
 }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
