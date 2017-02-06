@@ -1,7 +1,6 @@
 h1 {
   margin-bottom: 30px;
 }
-
 input[type="text"] {
   width: 200px;
   float: left;
@@ -9,11 +8,6 @@ input[type="text"] {
 .narrow-button {
   float: left;
   margin-left: 10px;
-}
-.col-sm-12{
-  border: 1px solid blue;
-  outline-style: solid;
-  outline-color: blue;
 }
 .error {
     font-weight: bold;
