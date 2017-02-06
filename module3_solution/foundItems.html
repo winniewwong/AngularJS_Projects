@@ -1,0 +1,9 @@
+<div class="row"  ng-repeat="item in menu.foundList" >
+  <div class="col-sm-12">
+    name: {{item.name}} ,
+    short_name: {{item.short_name}} ,
+    description: {{ item.description }} </br>
+    <button ng-click="menu.onRemove({index: $index});">Don't want this one</button>
+    </div>
+</div>
+<div class="error" ng-if="menu.nothingFound()">Nothing found</div>
