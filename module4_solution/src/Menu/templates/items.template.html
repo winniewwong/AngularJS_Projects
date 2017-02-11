@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="item in $ctrl.items" >
+   Name: {{ item.name }} <br>
+   Short Name: {{ item.short_name }} <br>
+   Description: {{ item.description }} <br>
+   {{ item.large_portion_name }} {{ item.price_large | currency }} <br>
+   {{ item.small_portion_name }} {{ item.price_small | currency }}
+  </li>
+</ul>
