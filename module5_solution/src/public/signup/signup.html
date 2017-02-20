@@ -1,0 +1,85 @@
+<div class="container" >
+  <h1>Sign Up for Newsletter!</h1>
+
+  <fieldset>
+    <legend>Registration</legend>
+    <form name='regForm' novalidate>
+
+    First Name:<br>
+    <input id=firstName type="text" name="firstName" placeholder="First Name"
+        ng-model="signupCtrl.user.firstName"
+        required
+        pattern="([A-Za-z]+)">
+        <span ng-if="regForm.firstName.$error.required">
+          First name is required.
+        </span>
+        <span ng-if="regForm.firstName.$invalid && regForm.firstName.$dirty">
+          First name must be alphabet.
+        </span>
+        <br>
+
+      Last Name:<br>
+      <input id=lastName type="text" name="lastName" placeholder="Last Name"
+        ng-model="signupCtrl.user.lastName"
+        required
+        pattern="([A-Za-z]+)">
+        <span ng-if="regForm.firstName.$error.required">
+          Last name is required.
+        </span>
+        <span ng-if="regForm.lastName.$invalid && regForm.lastName.$dirty">
+          Last name must be alphabet.
+        </span>
+        <br>
+
+      Your favorite dish's menu number<br>
+      <input id=shortName type="text" name="shortName" placeholder="Menu number"
+        required
+        ng-model="signupCtrl.user.shortName"
+        ng-focus="signupCtrl.onClearValidateMenuNum()"
+        ng-blur="signupCtrl.onValidateMenuNum()" >
+        <span ng-if="regForm.shortName.$error.required">
+          Menu number is required.
+        </span>
+        <span ng-if="signupCtrl.validateMenuNum && !signupCtrl.foundMenuNum && signupCtrl.user.shortName.length > 0" >
+          No such menu number exists.
+        </span>
+        <br>
+
+      Email:<br>
+      <input id=email type="email" name="email" placeholder="Email"
+        required
+        ng-model="signupCtrl.user.email"
+        required>
+        <span ng-if="regForm.email.$error.required">
+          Email address is required.
+        </span>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+      Phone:<br>
+      <input id=phone type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="signupCtrl.user.phone"
+        required
+        pattern="(\d{3})-?(\d{3})-?(\d{4})">
+        <span ng-if="regForm.phone.$error.required">
+          Phone is required.
+        </span>
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$dirty">
+          Phone must be in the format ###-###-#### or ##########.
+        </span>
+        <br>
+
+      <button id=signup
+        ng-disabled="regForm.$invalid || !signupCtrl.foundMenuNum"
+        ng-click="signupCtrl.submit()">Submit</button>
+
+    </form>
+  </fieldset>
+
+  <div style="margin-top: 20px; " ng-if="signupCtrl.registrationSaved">
+    <strong>Your information has been saved.  </strong>
+  </div>
+
+</div>

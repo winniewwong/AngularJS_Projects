@@ -1,0 +1,30 @@
+/*body {
+  font-size: 1.2em;
+}*/
+#firstName, #lastName, #email, #phone,  #shortName{
+  color: #000;
+}
+
+#signup:enabled{
+  color: #000;
+}
+
+input {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+button {
+  font-size: 24px;
+}
+
+.ng-touched.ng-valid {win
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+#info {
+  margin-top: 20px;
+}
